@@ -1,7 +1,7 @@
 
 
 /*
-Accept N numbers from user and  accept one another nUnber as No , and return Smallest Number
+Accept N numbers from user and  accept one another nUnber as No , and return largest Number
 */
 
 #include <stdio.h>
@@ -16,13 +16,15 @@ int Difference(int Arr [],int iLength)
     int iMin=Arr[0];
     for(iCnt=0;iCnt<iLength;iCnt++)
     {
-      
+       if(Arr[iCnt]>iMax){
+        iMax=Arr[iCnt];
+       }
        if(Arr[iCnt]<iMin)
        {
         iMin=Arr[iCnt];
        }
     }
-    return  iMin;
+    return iMax-iMin;
 
 }
 
@@ -32,7 +34,7 @@ int main()
     int *p=NULL;
     int iRet=0;
 
-    printf("Enter the Number of Elements");
+    printf("Enter the Number of Elemetssss");
     scanf("%d",&iSize);
     p=(int*)malloc(iSize*sizeof(int));
 
