@@ -5,27 +5,15 @@
         int i=0;
         int j=0;
         int iCnt=1;
-    for(i=1;i<=iRow;i++)
+    for(i=iRow;i>=1;i--)
     {
-        for(j=iCol;j>=1;j--)
+        for(j=1;j<=iCol;j++)
         {
-            // printf("%d,%d\t",i,j);
-
-            if((i==j)||(i==iRow)||(i==1)||(j==1)||j==iCol)
+            if(i>=j)
             {
                 printf("%c\t",'*');
             }
-            // else if(i<j)
-            // {
-            //     printf("%c\t",'*');
-            // }
-            else if(i<j)
-            {
-                printf("%c\t",'#');
-            }
-            else {
-                printf("%c\t",'$');
-            }
+           
 
                 
                

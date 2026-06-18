@@ -19,12 +19,9 @@
             // {
             //     printf("%c\t",'*');
             // }
-            else if(i<j)
+            else
             {
-                printf("%c\t",'#');
-            }
-            else {
-                printf("%c\t",'$');
+                printf("%c\t",' ');
             }
 
                 

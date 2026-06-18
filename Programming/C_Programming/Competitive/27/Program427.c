@@ -7,25 +7,19 @@
         int iCnt=1;
     for(i=1;i<=iRow;i++)
     {
-        for(j=iCol;j>=1;j--)
+        for(j=1;j<=iCol;j++)
         {
-            // printf("%d,%d\t",i,j);
-
-            if((i==j)||(i==iRow)||(i==1)||(j==1)||j==iCol)
+            if((i==j)||i==1||i==iRow||j==iCol||j==1)
             {
                 printf("%c\t",'*');
             }
-            // else if(i<j)
-            // {
-            //     printf("%c\t",'*');
-            // }
-            else if(i<j)
+
+            else
             {
-                printf("%c\t",'#');
+                printf("%c\t",' ');
             }
-            else {
-                printf("%c\t",'$');
-            }
+            
+           
 
                 
                
@@ -42,4 +36,4 @@
         printf("Enter Number of rows  and Columns");
         scanf("%d%d",&iValue1,&iValue2);
         Pattern(iValue1,iValue2);
-    }
+    } 
