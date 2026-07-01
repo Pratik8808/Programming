@@ -1,18 +1,26 @@
 #include <stdio.h>
 typedef unsigned int UNIT;
 typedef int BOOL;
-
-// Accept number  and Accept Position from user off the bit and return  modified one
-int ChekBitoff(UNIT iNO,int iPos) 
+//write Program and Display  pOstion of common on bits from the two numbers
+int commonBits(UNIT iNO,int iNo2) 
 {
-  UNIT iMask=0x01;
-  iMask=iMask<<iPos-1;
+    int iPost=1;
+    int iMask=iNO & iNo2;
+    while(iMask!=0)
+    {
+        UNIT temp=0x01;
+        if((iMask &temp)==temp)
+        { 
+           
+            printf("%d\t",iPost);
 
-  iMask=~iMask;
-  UNIT iResult=iMask & iNO;
- 
+        }
+        iPost++;
+        iMask=iMask>>1;
+    }
 
-    return iResult;
+
+  
 
 }
 int main()
@@ -22,11 +30,11 @@ int main()
     int iPos=0;
     printf("Enter the Number :");
     scanf("%d",&iValue);
-    printf("Enter the Bit to check on or off\n");
+    printf("Enter the Second Number");
     scanf("%d",&iPos);
-    iRet=ChekBitoff(iValue,iPos);
+    commonBits(iValue,iPos);
     
-    printf("Updated Number is %d",iRet);
+    // printf("Count is of common bits %d",iRet);
 
 
     

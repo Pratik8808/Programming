@@ -27,7 +27,7 @@ int main()
     int iPos=0;
     printf("Enter the Number :");
     scanf("%d",&iValue);
-    int iRet=CountOne(iValue);
+    int iRet=CountOne(iValue);  
 
     
 

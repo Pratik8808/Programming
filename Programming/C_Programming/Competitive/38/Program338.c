@@ -1,32 +1,48 @@
 #include <stdio.h>
 typedef unsigned int UNIT;
 typedef int BOOL;
+#define TRUE 1
+#define FALSE 0
 
-// Accept number  and Accept Position from user on the bit and return  modified one
-int Biton(UNIT iNO,int iPos) 
+// Accept number  and Accept Position from user and chec 9 and 12 on or off bit 
+int chkBit(UNIT iNO) 
 {
-  UNIT iMask=0x01;
-  iMask=iMask<<iPos-1;
+  UNIT iMask1=0x01;
+  UNIT imask2=0x01;
+  iMask1=iMask1<<(9-1);
+  imask2=imask2<<(12-1);
+  BOOL flag=FALSE;
 
-//   iMask=iMask |(1<<iPos-1);
-  UNIT iResult=iMask | iNO;
- 
+UNIT  iMask=iMask1 |imask2;
 
-    return iResult;
+if((iMask & iNO)==iMask)
+{
+  flag=TRUE;
+}
+
+  
+
+    return flag;
 
 }
 int main()
 {
     int iValue= 0;
     UNIT iRet=0;
-    int iPos=0;
+    BOOL bRet=FALSE;
     printf("Enter the Number :");
     scanf("%d",&iValue);
-    printf("Enter the Bit postion to start bit on \n");
-    scanf("%d",&iPos);
-    iRet=Biton(iValue,iPos);
-    
-    printf("Updated Number is %d",iRet);
+   
+    bRet=chkBit(iValue);
+
+    if(bRet==1)
+    {
+        printf("TRUE");
+    }
+    else
+    {
+        printf("FALSE ");
+    }
 
 
     
